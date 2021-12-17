@@ -17,7 +17,8 @@ public class CountNoOfDigits
 
   public static void main(String[] args) 
   {
-    System.out.println("Enter a Number: "); 
+    System.out.println();
+    System.out.print("Enter a Number: "); 
     int n = scn.nextInt();
     System.out.print("Number of Digits are: " + CountNumberOfDigits(n));
     System.out.println();
