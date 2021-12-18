@@ -9,7 +9,7 @@ public class Prime
 
   }
 
-  public static int main(String[] args)
+  public static void main(String[] args)
   {
     System.out.println();
     System.out.print("Enter a Number: ");
@@ -18,6 +18,5 @@ public class Prime
     IsPrime(n);
    
     System.out.println();
-    return 0;
   }
 }

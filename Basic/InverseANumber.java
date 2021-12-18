@@ -12,13 +12,11 @@ public class InverseANumber
     return res; 
   }
 
-  public static int main(String[] args)
+  public static void main(String[] args)
   {
     System.out.println();
     System.out.print("Enter a Number: ");
     int n = scn.nextInt();
-    System.out.print("Inversed Number: " + InversedNumber(n));
-    System.out.println();
-    return 0;
+    System.out.println("Inversed Number: " + InversedNumber(n));
   } 
 }
