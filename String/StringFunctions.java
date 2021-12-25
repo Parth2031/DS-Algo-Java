@@ -1,4 +1,5 @@
 // TODO:: String Defined Functions ---->> 
+
 // ? String is Immutable in Java means we cannot directly change any value in Java.
 // & Input a String till Space => String str. scn.next();
 // ~ Input a String for Complete Line => String str = scn.nextLine();
