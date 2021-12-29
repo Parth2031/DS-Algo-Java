@@ -23,7 +23,7 @@ public class IntroductionToLinkedList
     System.out.println();
     
     LinkedList<String> ll = new LinkedList<>();
-    ll.add("A");
+    ll.add(scn.next());
     ll.add("B");
     ll.addLast("C");
     ll.addFirst("D");
