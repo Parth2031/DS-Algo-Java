@@ -19,6 +19,7 @@ public class IntroductionToHashmap
 {
   public static void main(String[] args) 
   {
+    System.out.println();
     HashMap<String, Integer> hm = new HashMap<>();
 
     hm.put("India", 1391);
@@ -31,7 +32,7 @@ public class IntroductionToHashmap
     for (String key : hm.keySet())
     {
       Integer val = hm.get(key);
-      System.out.print(key + ":" + val + "  ");
+      System.out.println(key + " : " + val + "  ");
     }
   }
 }

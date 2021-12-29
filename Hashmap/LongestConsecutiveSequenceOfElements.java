@@ -1,5 +1,13 @@
 // ^ Longest Consecutive Sequence of Elements where size "n" is broken into n1, n2 Pair of Elements without Duplicacy.
-// ? Example - 
+// ! Exceptional Case : -->
+// * If two sequences of equal length and longest, then print the one for which the starting point of which occurs first in the array.
+// ? Example - Size of array = 11
+// &           Array = 10 5 9 1 11 8 6 15 3 12 2
+// Consecutive Sequence of Elements - 1 2 3
+//                                    5 6 
+//                                    8 9 10 11 12
+//                                    15
+// ~           Result = 8 9 10 11 12
 
 import java.util.*;
 
@@ -9,21 +17,39 @@ public class LongestConsecutiveSequenceOfElements
 
   public static void BiggestCommonSequence(ArrayList<Integer> arr)
   {
-    // HashMap<Integer, Integer> hm = new HashMap<>();
-    // for (int i = 0; i < arr.size(); i++) 
-    // {
-    //   int num = arr.get(i);
-    //   if(hm.containsKey(num)) 
-    //   {
-    //     int freq = hm.get(num);
-    //     hm.put(num, freq + 1);
-    //   } 
-    //   else
-    //     hm.put(num, 1);
-    // }
-
+    HashMap<Integer, Boolean> hm = new HashMap<>();
     
+    for(int val : arr)
+      hm.put(val, true);     // ! It represents that its corresponding element is the starting element of a desired sequence.
+    
+    for(int val : arr)
+    {
+      if(hm.containsKey(val - 1))
+        hm.put(val, false);
+    }
 
+    int maxLength = 0;
+    int maxStartingPoint = 0;
+    for(int val : arr)
+    {
+      if(hm.containsKey(val) == true)
+      {
+        int tempLength = 1;
+        int tempStartingPoint = val;
+
+        while(hm.containsKey(tempLength + tempStartingPoint))
+          tempLength++;
+
+        if(tempLength > maxLength)
+        {
+          maxLength = tempLength;
+          maxStartingPoint = tempStartingPoint;
+        }  
+      }
+    }
+
+    for(int i = 0; i < maxLength; i++)
+      System.out.println(maxStartingPoint + i);
   }
 
   public static void main(String[] args)
