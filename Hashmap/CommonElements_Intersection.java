@@ -1,5 +1,5 @@
 // ! Get Common Elements 1 - 
-// ^ In this, we have to get Common Elements from Array1 in same order as Array2 with no duplicates.
+// ^ In this, we have to get Common Elements from Array1 in same order as Array2 with No Duplicates.
 // ? Example - Size of 1st Array = 9 , Size of 2nd Array = 18
 // &           Array1 = 5 5 9 8 5 5 8 0 3
 // &           Array2 = 9 7 1 0 3 6 5 9 1 1 8 0 2 4 2 9 1 5
@@ -14,7 +14,7 @@
 
 import java.util.*;
 
-public class GetCommonElements
+public class CommonElements_Intersection
 {
   public static Scanner scn = new Scanner(System.in);
 
