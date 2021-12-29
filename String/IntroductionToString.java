@@ -38,7 +38,7 @@
 
 import java.util.*;
 
-public class StringFunctions
+public class IntroductionToString
 {
   public static Scanner scn = new Scanner(System.in); 
 
