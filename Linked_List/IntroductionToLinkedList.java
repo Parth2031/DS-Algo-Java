@@ -3,6 +3,25 @@
 // & Linked List is Dynamic Array where it stores data of itself and address of the next element. 
 // * Syntax :-- LinkedList<Data_Type> ll = new LinkedList<>();
 
+// ? Linked List Node Working - 
+// public static class LinkedList {
+//     Node head;          // ~ head of the list
+//     Node tail;          // ~ tail of the list
+//     int size;
+
+//     /* Linked list Node*/
+//     public static class Node {
+//         int data;
+//         Node next;
+
+// ~      Constructor to create a new node
+// ~      Next is by default initialized as null
+//         Node(int d) { data = d; }
+//     }
+// }
+// * LinkedList ll = new LinkedList();
+//   ll.head = new Node(index); 
+
 // ! Linked List Built-In Functions :
 
 // ? .add(int index, E element/O object);                        [.addFirst() & .addLast()]
@@ -14,14 +33,12 @@
 
 import java.util.*;
 
-public class IntroductionToLinkedList
-{
+public class IntroductionToLinkedList {
   public static Scanner scn = new Scanner(System.in);
 
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     System.out.println();
-    
+
     LinkedList<String> ll = new LinkedList<>();
     ll.add(scn.next());
     ll.add("B");
