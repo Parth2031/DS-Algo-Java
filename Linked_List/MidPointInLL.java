@@ -54,8 +54,8 @@ public class MidPointInLL
 
       while(fast != null && fast.next != null)
       {
-        slow = slow.next;
-        fast = fast.next.next;
+        slow = slow.next;                          // ! 1x Speed
+        fast = fast.next.next;                     // ! 2x Speed
       }
       return slow.data;
     }
