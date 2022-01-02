@@ -10,13 +10,14 @@
 //     int size;
 
 //     /* Linked list Node*/
-//     public static class Node {
+//     private class Node {
 //         int data;
 //         Node next;
 
 // ~      Constructor to create a new node
-// ~      Next is by default initialized as null
-//         Node(int d) { data = d; }
+// !      Next is by default initialized as null and Data as "0".
+//        public Node(int d) { data = d; }
+//        public Node() {   }
 //     }
 // }
 // * LinkedList ll = new LinkedList();
