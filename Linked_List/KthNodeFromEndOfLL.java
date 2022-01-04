@@ -67,13 +67,34 @@ public class KthNodeFromEndOfLL
 
     public void ReverseLL_PointerIterative()
     {
+      Node prev = null;
+      Node curr = head;
 
+      while(curr != null)
+      {
+        Node ahead = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = ahead;
+      }
+
+      Node temp = head;
+      head = tail;
+      tail = temp;
     }
 
-    public Node KthNodeAtEndOfLL(int k)
+    public int KthNodeAtEndOfLL(int k)
     {
-      Node node = getNodeAt(k);  
-      return node;
+      Node node = getNodeAt(k);
+      return node.data;
+    }
+    
+    public int KthNodeAtEnd_Alternative(int k)
+    {
+      Node slow = head;
+      
+
+      return slow.data;
     }
   }
   
@@ -87,8 +108,13 @@ public class KthNodeFromEndOfLL
     for (int i = 0; i < n; i++)
       list.addLast(scn.nextInt());  
     System.out.print("Enter the Kth Index: ");
-    // int k = scn.nextInt();
-    // list.ReverseLL_PointerIterative();
-    // System.out.print("Kth Node From End of Linked List: " + );
+    int k = scn.nextInt();
+
+    System.out.print("Kth Node From End of Linked List (Alternative): " + list.KthNodeAtEnd_Alternative(k));
+
+    list.ReverseLL_PointerIterative();
+    System.out.print("Kth Node From End of Linked List: " + list.KthNodeAtEndOfLL(k));
+
+    System.out.println();
   }
 }
