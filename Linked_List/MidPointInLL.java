@@ -47,6 +47,22 @@ public class MidPointInLL
       System.out.println();  
     }
 
+    public void Sort()
+    {
+      for(Node curr = head; curr != null; curr = curr.next)
+      {
+        for(Node ahead = curr; ahead != null; ahead = ahead.next)
+        {
+          if(curr.data > ahead.data)
+          {
+            int temp = curr.data;
+            curr.data = ahead.data;
+            ahead.data = temp;
+          }
+        }
+      }
+    }
+
     public int MidPointofLinkedList()
     {
       Node slow = head;
@@ -70,7 +86,9 @@ public class MidPointInLL
     System.out.print("Enter the Values for Linked List: ");
     for (int i = 0; i < n; i++)
       list.addLast(scn.nextInt());    
-    // list.display();
     System.out.println("Mid Point Value of Linked List: " + list.MidPointofLinkedList());
+    System.out.print("Sorted Linked List: ");
+    list.Sort();
+    list.display();
   }
 }
