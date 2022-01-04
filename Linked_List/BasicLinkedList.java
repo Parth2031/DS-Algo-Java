@@ -62,11 +62,40 @@ public class BasicLinkedList
     }
 
     int getAt(int idx)
-    { 
+    {
+      if (size == 0)
+      {
+        System.out.println("LinkedList is Empty");
+        return -1;
+      }
+      if (idx < 0 || idx >= size)
+      {
+        System.out.println("Invalid Index");
+        return -1;
+      }
+      
       Node temp = head;
-      for(int i = 0; i < idx; i++)
+      for (int i = 1; i <= idx; i++)
         temp = temp.next;
       return temp.data;
+    }
+
+    private Node getNodeAt(int idx)
+    {
+      if(size == 0)
+      {
+        System.out.println("LinkedList is Empty");
+        return null;
+      }
+      if(idx < 0 || idx >= size)
+      {
+        System.out.println("Invalid Index");
+        return null;
+      }
+      Node temp = head;
+      for(int i = 1; i <= idx; i++)
+        temp = temp.next;
+      return temp;
     }
 
     void addLast(int val) 
@@ -141,30 +170,36 @@ public class BasicLinkedList
     }
     
     void addAt(int val, int idx)
-    {
-      Node node = new Node();
-      node.data = val;
-      
+    { 
       if (idx < 0 || idx > size)
-      System.out.println("Invalid Index");
+        System.out.println("Invalid Index");
       else if (idx == 0)
         addFirst(val);
       else if (idx == size)
         addLast(val);
       else
       {
-        Node temp = head;
-        for (int i = 0; i < idx - 1; i++) 
-          node = node.next;
-        node.next = temp.next;
-        temp.next = node;
+        Node currNode = new Node();
+        currNode.data = val;
+
+        // Node temp = head;
+        // for (int i = 0; i < idx - 1; i++) 
+        //   node = node.next;
+        // node.next = temp.next;
+        // temp.next = node;
+        
+        Node prevNode = getNodeAt(idx - 1);
+        Node nextNode = prevNode.next;
+
+        prevNode.next = currNode;
+        currNode.next = nextNode;
         size++;   
       }
     }
 
     void removeAt(int idx)
     {
-      if (idx < 0 || idx > size)
+      if (idx < 0 || idx >= size)
         System.out.println("Invalid Index");
       else if (idx == 0)
         removeFirst();
@@ -173,7 +208,7 @@ public class BasicLinkedList
       else
       {
         Node temp = head;
-        for(int i = 0; i < idx - 1; i++)
+        for(int i = 1; i <= idx; i++)
           temp = temp.next;
         temp.next = temp.next.next;
         size--;
@@ -185,6 +220,15 @@ public class BasicLinkedList
   public static void main(String[] args)
   {
     System.out.println();
+    
+    // System.out.print("Enter the Size of Linked List: ");
+    // int n = scn.nextInt();
+    // LinkedList list = new LinkedList();
+    // System.out.print("Enter the Values for Linked List: ");
+    // for (int i = 0; i < n; i++)
+    //   list.addLast(scn.nextInt());
+    // list.display();
+
     LinkedList list = new LinkedList();
     System.out.println("Size of linked List: " + list.size()); 
     list.addLast(20);
@@ -192,6 +236,7 @@ public class BasicLinkedList
     list.addLast(40);
     list.addFirst(10);
     list.display();
+
     System.out.println("First Value: " + list.getFirst());
     System.out.println("Last Value: " + list.getLast());
     System.out.println("Value at Index 1: " + list.getAt(1));

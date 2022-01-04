@@ -24,7 +24,7 @@ public class MidPointInLL
       return size;
     }   
 
-    void addlast(int val)
+    void addLast(int val)
     {
       Node temp = new Node();
       temp.data = val;
@@ -64,15 +64,13 @@ public class MidPointInLL
   public static void main(String[] args)
   {
     System.out.println();
+    System.out.print("Enter the Size of Linked List: ");
+    int n = scn.nextInt();
     LinkedList list = new LinkedList();
-    list.addlast(10);
-    list.addlast(20);
-    list.addlast(30);
-    list.addlast(40);
-    list.addlast(50);
-    list.addlast(60);
-    list.addlast(70);
-    list.display();
-    System.out.println("Mid Point of Linked List: " + list.MidPointofLinkedList());
+    System.out.print("Enter the Values for Linked List: ");
+    for (int i = 0; i < n; i++)
+      list.addLast(scn.nextInt());    
+    // list.display();
+    System.out.println("Mid Point Value of Linked List: " + list.MidPointofLinkedList());
   }
 }
