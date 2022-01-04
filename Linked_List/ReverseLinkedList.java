@@ -42,14 +42,14 @@ public class ReverseLinkedList
       return temp;  
     }
     
-    void display()
+    public void display()
     {
       for(Node temp = head; temp != null; temp = temp.next)
         System.out.print(temp.data + " ");
       System.out.println();
     }
 
-    void addLast(int val)
+    public void addLast(int val)
     {
       Node temp = new Node();
       temp.data = val;
@@ -65,7 +65,7 @@ public class ReverseLinkedList
       size++;
     }
     
-    void ReverseLL_DataIterative()
+    public void ReverseLL_DataIterative()
     {
       int start = 0;
       int end = size - 1;
@@ -84,17 +84,32 @@ public class ReverseLinkedList
       }
     }
 
-    void ReverseLL_PointerIterative()
+    // ! In this, We are making Pointers from tail to head and So, after Swapping tail becomes head and vice versa.  
+
+    public void ReverseLL_PointerIterative()
+    {
+      Node prev = null;
+      Node curr = head;
+
+      while(curr != null)
+      {
+        Node ahead = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = ahead;
+      }
+
+      Node temp = head;
+      head = tail;
+      tail = temp;
+    }
+
+    public void ReverseLL_Recursive()
     {
       
     }
 
-    void ReverseLL_Recursive()
-    {
-
-    }
-
-    void ReverseLL_PointerRecursive()
+    public void ReverseLL_PointerRecursive()
     {
       
     }

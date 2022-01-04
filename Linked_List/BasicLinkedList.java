@@ -39,7 +39,7 @@ public class BasicLinkedList
       System.out.println();
     }
 
-    int getFirst()
+    public int getFirst()
     {
       if (size == 0)
       {
@@ -50,7 +50,7 @@ public class BasicLinkedList
         return head.data;  
     }
     
-    int getLast()
+    public int getLast()
     {
       if (size == 0) 
       {
@@ -61,7 +61,7 @@ public class BasicLinkedList
         return tail.data;
     }
 
-    int getAt(int idx)
+    public int getAt(int idx)
     {
       if (size == 0)
       {
@@ -98,7 +98,7 @@ public class BasicLinkedList
       return temp;
     }
 
-    void addLast(int val) 
+    public void addLast(int val) 
     {
       Node temp = new Node();                  
       temp.data = val;
@@ -117,7 +117,7 @@ public class BasicLinkedList
       size++;
     }
     
-    void addFirst(int val)
+    public void addFirst(int val)
     {
       Node temp = new Node();
       temp.data = val;
@@ -133,7 +133,7 @@ public class BasicLinkedList
       size++;
     }
 
-    void removeFirst()
+    public void removeFirst()
     {
       if(size == 0)
         System.out.println("LinkedList is Empty");
@@ -149,7 +149,7 @@ public class BasicLinkedList
       }  
     }
     
-    void removeLast()
+    public void removeLast()
     {
       if(size == 0)
         System.out.println("LinkedList is Empty");
@@ -169,7 +169,7 @@ public class BasicLinkedList
       } 
     }
     
-    void addAt(int val, int idx)
+    public void addAt(int val, int idx)
     { 
       if (idx < 0 || idx > size)
         System.out.println("Invalid Index");
@@ -189,15 +189,15 @@ public class BasicLinkedList
         // temp.next = node;
         
         Node prevNode = getNodeAt(idx - 1);
-        Node nextNode = prevNode.next;
+        Node aheadNode = prevNode.next;
 
         prevNode.next = currNode;
-        currNode.next = nextNode;
+        currNode.next = aheadNode;
         size++;   
       }
     }
 
-    void removeAt(int idx)
+    public void removeAt(int idx)
     {
       if (idx < 0 || idx >= size)
         System.out.println("Invalid Index");

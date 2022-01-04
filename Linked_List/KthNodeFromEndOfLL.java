@@ -24,7 +24,7 @@ public class KthNodeFromEndOfLL
       return size;
     }
 
-    void display()
+    public void display()
     {
       for(Node temp = head; temp != null; temp = temp.next)
         System.out.print(temp.data + " ");
@@ -49,7 +49,7 @@ public class KthNodeFromEndOfLL
       return temp;  
     } 
 
-    void addLast(int val)
+    public void addLast(int val)
     {
       Node temp = new Node();
       temp.data = val;
@@ -65,11 +65,14 @@ public class KthNodeFromEndOfLL
       size++;
     }
 
-    Node KthNodeAtEndOfLL(int k)
+    public void ReverseLL_PointerIterative()
     {
-      Node node = getNodeAt(k);
-       
 
+    }
+
+    public Node KthNodeAtEndOfLL(int k)
+    {
+      Node node = getNodeAt(k);  
       return node;
     }
   }
@@ -82,9 +85,10 @@ public class KthNodeFromEndOfLL
     LinkedList list = new LinkedList();
     System.out.print("Enter the Values for Linked List: ");
     for (int i = 0; i < n; i++)
-      list.addLast(scn.nextInt());
+      list.addLast(scn.nextInt());  
     System.out.print("Enter the Kth Index: ");
     // int k = scn.nextInt();
+    // list.ReverseLL_PointerIterative();
     // System.out.print("Kth Node From End of Linked List: " + );
   }
 }
