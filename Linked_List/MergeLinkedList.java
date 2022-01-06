@@ -47,9 +47,37 @@ public class MergeLinkedList
       size++;
     }
     
-    public void MergeTwoLinkedList()
+    public void MergeTwoLinkedList(LinkedList l1, LinkedList l2)
     {
+      Node one = l1.head;
+      Node two = l2.head;
+      LinkedList res = new LinkedList();
       
+      while(one != null && two != null)
+      {
+        if(one.data < two.data)
+        {
+          res.addLast(one.data);
+          one = one.next;
+        }
+        else 
+        {
+          res.addLast(two.data);
+          two = two.next;
+        }
+      }
+      
+      while(one != null)
+      {
+        res.addLast(one.data);
+        one = one.next;
+      }
+      while(two != null)
+      {
+        res.addLast(two.data);
+        two = two.next;
+      }
+      res.display();
     }
   }
   
@@ -68,6 +96,8 @@ public class MergeLinkedList
     System.out.print("Enter the Values for 2nd Linked List: ");
     for (int i = 0; i < m; i++)
       list_2.addLast(scn.nextInt());
-
+    System.out.print("Merged Two Sorted Linked List: ");
+    LinkedList ans = new LinkedList();
+    ans.MergeTwoLinkedList(list_1, list_2);
   }
 }
