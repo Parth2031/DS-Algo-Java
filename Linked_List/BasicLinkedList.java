@@ -41,7 +41,7 @@ public class BasicLinkedList
 
     public int getFirst()
     {
-      if (size == 0)
+      if(size == 0)
       {
         System.out.println("LinkedList is Empty");
         return -1;
@@ -52,7 +52,7 @@ public class BasicLinkedList
     
     public int getLast()
     {
-      if (size == 0) 
+      if(size == 0) 
       {
         System.out.println("LinkedList is Empty");
         return -1;
@@ -63,19 +63,19 @@ public class BasicLinkedList
 
     public int getAt(int idx)
     {
-      if (size == 0)
+      if(size == 0)
       {
         System.out.println("LinkedList is Empty");
         return -1;
       }
-      if (idx < 0 || idx >= size)
+      if(idx < 0 || idx >= size)
       {
         System.out.println("Invalid Index");
         return -1;
       }
       
       Node temp = head;
-      for (int i = 1; i <= idx; i++)
+      for(int i = 1; i <= idx; i++)
         temp = temp.next;
       return temp.data;
     }
@@ -106,7 +106,7 @@ public class BasicLinkedList
 
       // Node AlternativeTemp = new Node(10);
 
-      if (size == 0) 
+      if(size == 0) 
         head = tail = temp; 
       else 
       {
@@ -137,7 +137,7 @@ public class BasicLinkedList
     {
       if(size == 0)
         System.out.println("LinkedList is Empty");
-      else if (size == 1)
+      else if(size == 1)
       {
         head = tail = null;
         size = 0;
@@ -171,11 +171,11 @@ public class BasicLinkedList
     
     public void addAt(int val, int idx)
     { 
-      if (idx < 0 || idx > size)
+      if(idx < 0 || idx > size)
         System.out.println("Invalid Index");
-      else if (idx == 0)
+      else if(idx == 0)
         addFirst(val);
-      else if (idx == size)
+      else if(idx == size)
         addLast(val);
       else
       {
@@ -199,9 +199,9 @@ public class BasicLinkedList
 
     public void removeAt(int idx)
     {
-      if (idx < 0 || idx >= size)
+      if(idx < 0 || idx >= size)
         System.out.println("Invalid Index");
-      else if (idx == 0)
+      else if(idx == 0)
         removeFirst();
       else if (idx == size - 1)
         removeLast();
