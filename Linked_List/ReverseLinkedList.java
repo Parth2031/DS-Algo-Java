@@ -88,6 +88,9 @@ public class ReverseLinkedList
 
     public void ReverseLL_PointerIterative()
     {
+      if(size <= 1)
+        return;
+
       Node prev = null;
       Node curr = head;
 
@@ -104,14 +107,36 @@ public class ReverseLinkedList
       tail = temp;
     }
 
+    private void ReverseLL_RecursiveHelper(Node node)
+    {
+      if (node == null)
+        return;
+
+      ReverseLL_RecursiveHelper(node.next);
+      System.out.print(node.data + " ");
+    }
+    
     public void ReverseLL_Recursive()
     {
-      
+      ReverseLL_RecursiveHelper(head);
+      System.out.println();
+    }
+
+    private void ReverseLL_PointerRecursiveHelper(Node node) 
+    {
+      if (node == tail) 
+        return;
+      ReverseLL_PointerRecursiveHelper(node.next);
+      node.next.next = node;
     }
 
     public void ReverseLL_PointerRecursive()
     {
-      
+      ReverseLL_PointerRecursiveHelper(head);
+      Node temp = head;
+      head = tail;
+      tail = temp;
+      tail.next = null;
     }
   }
   
@@ -133,12 +158,11 @@ public class ReverseLinkedList
     list.ReverseLL_PointerIterative();
     list.display();
 
-    // System.out.print("Reversed Linked List by Recursive: ");
-    // list.ReverseLL_DataIterative();
-    // list.display();
+    System.out.print("Reversed Linked List by Recursive: ");
+    list.ReverseLL_Recursive();
 
-    // System.out.print("Reversed Linked List by Pointer Recursive: ");
-    // list.ReverseLL_DataIterative();
-    // list.display();
+    System.out.print("Reversed Linked List by Pointer Recursive: ");
+    list.ReverseLL_PointerRecursive();
+    list.display();
   }
 }
