@@ -18,6 +18,16 @@ public class ReverseArray
     
     return;
   }
+  
+  public static void reverseArray(ArrayList<Integer> arr, int idx)
+  {
+    if(idx == arr.size())
+      return;
+
+    reverseArray(arr, idx + 1);
+    System.out.print(arr.get(idx) + " ");
+  }
+
 
   public static void main(String[] args)
   {
@@ -31,7 +41,10 @@ public class ReverseArray
     ReversedArray(arr, 0, n - 1);
     System.out.print("Reversed Array: ");
     for (int i = 0; i < n; i++)
-      System.out.print(arr.get(i) + " "); 
+      System.out.print(arr.get(i) + " ");
+    System.out.println();
+    System.out.print("Reverse Array: ");  
+    reverseArray(arr, 0);
     System.out.println();
   }
 }
