@@ -15,15 +15,18 @@ public class CountOrRemoveHi
       return CountHi(str, word, idx + 1, count);
   }
   
-  public static String RemoveHi(String str, String word, int idx, String ans)
+  public static String RemoveHi(String str, String word)
   {
-    if(idx >= str.length())
-      return ans;
-      
-    if(str.charAt(idx - 1) != word.charAt(0) && str.charAt(idx) != word.charAt(1))
-      return RemoveHi(str, word, idx + 1, ans + str.charAt(idx));
+    if(str.length() == 0)
+      return "";
+
+    if(str.length() > 1 && str.substring(0, 2).equals("hi"))
+      return RemoveHi(str.substring(2), word);
     else
-      return RemoveHi(str, word, idx + 1, ans);
+    {
+      char ch = str.charAt(0);
+      return ch + RemoveHi(str.substring(1), word);
+    }    
   }
 
   public static void main(String[] args)
@@ -34,6 +37,6 @@ public class CountOrRemoveHi
     System.out.print("Enter a Word: ");
     String word = scn.next();
     System.out.println("Count Number of 'Hi': " + CountHi(str, word, 1, 0));
-    System.out.println("Remove 'Hi': " + RemoveHi(str, word, 1, ""));
+    System.out.println("Remove 'Hi': " + RemoveHi(str, word));
   }
 }
