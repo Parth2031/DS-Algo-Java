@@ -1,9 +1,10 @@
-// TODO:: String Defined Functions ---->> 
+// TODO:: String Defined Functions and Conversion ---->> 
 
 // ? String is Immutable in Java means we cannot directly change any value in Java.
 // & Input a String till Space => String str. scn.next();
 // ~ Input a String for Complete Line => String str = scn.nextLine();
 // ^ String str = new String("any value");
+// * Character Array to String -> String str = new String(arr);  where char arr[].
 
 // ! Difference between .equals and "==" :
 // ? In .equals, we use it in Comparison, as it check address as well as character by character whereas, "==" only check address.
@@ -17,9 +18,11 @@
 // ?                                            Where, it takes the starting index value but not ending index value.
 // * Syntax :--> string_defined_variable.substring(0, 3); 
 // ? .length() :- This Function will be used as loop iterator.
-// & To covert anything in String, we use .toString();
+// & To covert anything in String, we use .toString() or .valueOf().
 
-// ^ Important point:- In String, .charAt() is an alternative of of str[].
+// ^ Converting String Number into Integer Number using Integer.parseInt(str);
+
+// ~ Important point:- In String, .charAt() is the method to perform Character Array usage of this str[].
 
 // ! StringBuilder is used as "It is Mutable" :
 
@@ -39,26 +42,23 @@
 
 import java.util.*;
 
-public class IntroductionToString
-{
-  public static Scanner scn = new Scanner(System.in); 
+public class IntroductionToString {
+  public static Scanner scn = new Scanner(System.in);
 
-  public static void display(String str)
-  {
+  public static void display(String str) {
     System.out.print(str.substring(0, str.length()));
-    
+
     // ! To print a Character and Append those in String:
     // for(int i=0;i<str.length();i++)
-     // char ch = str.charAt(i); 
-     // char ch = str[i];
-     // str += ch;
+    // char ch = str.charAt(i); 
+    // char ch = str[i];
+    // str += ch;
   }
-  
-  public static void main(String[] args)
-  {
+
+  public static void main(String[] args) {
     // String str = "";
     System.out.println();
-    System.out.print("Enter the string: "); 
+    System.out.print("Enter the string: ");
     // String str = scn.next();
     String str = scn.nextLine();
     display(str);
