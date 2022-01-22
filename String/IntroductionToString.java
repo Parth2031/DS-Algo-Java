@@ -13,7 +13,8 @@
 
 // ? .charAt(i) :- This Function is used to check every character of a string. 
 // * Syntax :--> string_defined_variable.charAt(i) in a "i" loop. 
-// ? .substring(starting index,ending index) :- This function is used to check a string from starting index to ending index.
+// ? .substring(starting index,ending index) :- This function is used to check a string from starting index to ending index. 
+// ?                                            Where, it takes the starting index value but not ending index value.
 // * Syntax :--> string_defined_variable.substring(0, 3); 
 // ? .length() :- This Function will be used as loop iterator.
 // & To covert anything in String, we use .toString();
