@@ -10,6 +10,7 @@ public class CheckSorted
       return true;
   
     boolean mr = false;
+    
     if(arr[idx] < arr[idx + 1])
       mr = true;
     else
