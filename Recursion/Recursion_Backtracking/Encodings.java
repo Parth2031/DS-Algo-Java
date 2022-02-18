@@ -23,7 +23,7 @@ public class Encodings
         return;
       else 
       {
-        String ch1 = str.substring(0, 1);
+        String ch1 = str.substring(0, 1);         // ! char ch1 = str.charAt(0);
         String ros1 = str.substring(1);
         String code1 = (char)('a' + (Integer.parseInt(ch1) - 1)) + "";
         printEncodings(ros1, ans + code1);
@@ -35,7 +35,7 @@ public class Encodings
         return;
       else
       {
-        String ch1 = str.substring(0, 1);
+        String ch1 = str.substring(0, 1);         // ! char ch1 = str.charAt(0);
         String ros1 = str.substring(1);
         String code1 = (char)('a' + (Integer.parseInt(ch1) - 1)) + "";
         printEncodings(ros1, ans + code1);
