@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BasicLinkedList
+public class BasicLinkedList_Functions
 {
   public static Scanner scn = new Scanner(System.in);
   
