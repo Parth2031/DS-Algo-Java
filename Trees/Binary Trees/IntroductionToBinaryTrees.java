@@ -6,8 +6,7 @@
 // & PostOrder : Left->Right->Root 
 // ~ In which, Tree is created by Deafult in PreOrder.
 
-// ! "-1" refers to Null Value in either Left or Right Sise of Tree. 
-
+// ! "-1" refers to Null Value in either Left or Right Side of the Binary Tree. 
 
 import java.util.*;
 
@@ -78,7 +77,7 @@ public class IntroductionToBinaryTrees
     }
 
     Node node = new Node(arr[idx]);
-    idx++;
+    idx++;                               
 
     node.left = createTree(arr);
     node.right = createTree(arr);
@@ -104,8 +103,6 @@ public class IntroductionToBinaryTrees
 
   //   return node;
   // }
-
-    
 
   public static void main(String[] args)
   {
