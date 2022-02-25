@@ -112,13 +112,13 @@ public class Max_Sum_Size_HeightOfBinaryTree
     return overallSum;
   }
 
-  public static int height(Node node)
+  public static int heightOrMaxDepth(Node node)
   {
     if(node == null)
       return -1;
     
-    int leftHeight = height(node.left);
-    int rightHeight = height(node.right);
+    int leftHeight = heightOrMaxDepth(node.left);
+    int rightHeight = heightOrMaxDepth(node.right);
     int overallHeight = Math.max(leftHeight, rightHeight) + 1;
 
     return overallHeight; 
@@ -149,7 +149,7 @@ public class Max_Sum_Size_HeightOfBinaryTree
     System.out.println("Minimum Value in Binary Tree: " + minValue(root));
     System.out.println("Size of Binary Tree: " + size(root));
     System.out.println("Sum of Binary Tree: " + sum(root));
-    System.out.println("Height of Binary Tree: " + height(root));
+    System.out.println("Height/Maximum Depth of Binary Tree: " + heightOrMaxDepth(root));
     System.out.print("Enter the Value to be found: ");
     int item = scn.nextInt();
     System.out.println("Value/Item is Present in Binary Tree or not: " + find(root, item));
