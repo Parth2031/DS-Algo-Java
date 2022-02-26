@@ -9,6 +9,7 @@ public class MaximumSlidingWindow
 {
   public static Scanner scn = new Scanner(System.in);
 
+  // & We are Sending Index as Next Greatest Element and instead of -1, we use "Array Length".
   public static int[] nextGreatestElement_Right(int[] arr)
   {
     int[] nge = new int[arr.length];
