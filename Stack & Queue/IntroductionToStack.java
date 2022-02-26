@@ -1,7 +1,8 @@
 // ^ Stack Working :-
 
-// & Stack works on either LIFO/FILO.
-// * Syntax - Stack<Integer> st = new Stack<>();
+// & Stack works on LIFO.
+// * Syntax - Stack<Data_Type> st = new Stack<>();
+// ~ Example - Stack<Integer> st = new Stack<>();
 
 // ! Stack Built-In Functions 
 
