@@ -15,3 +15,4 @@
 // ? que.add(element)
 // ? .remove()
 // ? .peek()
+// ? .size()
