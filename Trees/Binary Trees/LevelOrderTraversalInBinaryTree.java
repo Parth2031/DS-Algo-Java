@@ -67,7 +67,7 @@ public class LevelOrderTraversalInBinaryTree
     Queue<Node> level = new ArrayDeque<>();
     level.add(node);
 
-    // ! Algorithm ->> Remove, Print, Add Children
+    // ! Algorithm ->> Remove, Print, Add Children using Queue
     while(level.size() > 0)
     {
       int count = level.size();
