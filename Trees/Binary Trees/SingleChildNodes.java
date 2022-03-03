@@ -62,7 +62,7 @@ public class SingleChildNodes
     return node;
   }
 
-  public static void printSingleChildNodes(Node node, Node parent)
+  public static void printSingleOrHalfChildNodes(Node node, Node parent)
   {
     if(node == null)
       return;
@@ -78,8 +78,8 @@ public class SingleChildNodes
       return;
     }
     
-    printSingleChildNodes(node.left, node);
-    printSingleChildNodes(node.right, node);
+    printSingleOrHalfChildNodes(node.left, node);
+    printSingleOrHalfChildNodes(node.right, node);
   }
 
   public static void main(String[] args)
@@ -88,8 +88,8 @@ public class SingleChildNodes
     int[] arr = {10,20,30,40,-1,-1,50,-1,-1,60,-1,70,-1,-1,80,90,100,120,-1,-1,130,-1,-1,110,-1,-1,140,-1,-1}; 
     
     Node root = createTree(arr);
-    System.out.print("Print All Single Child Nodes: ");
-    printSingleChildNodes(root, null);
+    System.out.print("Print All Single/Half Child Nodes: ");
+    printSingleOrHalfChildNodes(root, null);
 
     System.out.println();
   }

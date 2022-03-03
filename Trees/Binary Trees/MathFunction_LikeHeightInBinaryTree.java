@@ -157,6 +157,28 @@ public class MathFunction_LikeHeightInBinaryTree
     return totalTilt;
   }
 
+  public static boolean isBalance;
+
+  public static int balanced(Node node)
+  {
+    if(node == null)
+      return 0;
+
+    int leftBalancedHeight = balanced(node.left);
+    int rightBalancedHeight = balanced(node.right);
+
+    int gapOrTilt = Math.abs(leftBalancedHeight - rightBalancedHeight);
+    
+    // ! Unbalanced means when Two Single Child Nodes are Present at Once.
+    if(gapOrTilt > 1)
+      isBalance = false;
+    else
+      isBalance = true;
+
+    int totalBalancedHeight = Math.max(leftBalancedHeight, rightBalancedHeight) + 1;
+    return totalBalancedHeight;
+  }
+
   public static boolean find(Node node, int item)
   {
     if(node == null)
@@ -185,6 +207,8 @@ public class MathFunction_LikeHeightInBinaryTree
     System.out.println("Height/Maximum Depth of Binary Tree: " + heightOrMaxDepth(root));
     System.out.println("Diameter of a Binary Tree: " + diameter(root));
     System.out.println("Tilt of a Binary Tree: " + tilt(root));
+    balanced(root);
+    System.out.println("Is Binary Tree Balanced  or Not: " + isBalance);
     System.out.print("Enter the Value to be found: ");
     int item = scn.nextInt();
     System.out.println("Value/Item is Present in Binary Tree or not: " + find(root, item));
