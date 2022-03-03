@@ -78,9 +78,9 @@ public class LevelOrderTraversalInBinaryTree
 
         System.out.print(node.data + " ");
 
-        if (node.left != null)
+        if(node.left != null)
           level.add(node.left);
-        if (node.right != null)
+        if(node.right != null)
           level.add(node.right);
       }
       System.out.println();

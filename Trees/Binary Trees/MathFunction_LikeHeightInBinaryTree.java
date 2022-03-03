@@ -1,6 +1,9 @@
+// ^ Number of Questions are - 
+// & Max, Min, Sum, Size, Height / Max Depth, Diameter, Tilt and Find in Bianry Tree.
+
 import java.util.*;
 
-public class Max_Sum_Size_HeightOfBinaryTree
+public class MathFunction_LikeHeightInBinaryTree
 {
   public static Scanner scn = new Scanner(System.in);
 
@@ -114,16 +117,46 @@ public class Max_Sum_Size_HeightOfBinaryTree
 
   public static int heightOrMaxDepth(Node node)
   {
-    if(node == null)
+    if (node == null)
       return -1;
-    
+
     int leftHeight = heightOrMaxDepth(node.left);
     int rightHeight = heightOrMaxDepth(node.right);
     int overallHeight = Math.max(leftHeight, rightHeight) + 1;
 
-    return overallHeight; 
+    return overallHeight;
   }
   
+  public static int diameter(Node node)
+  {
+    if (node == null)
+      return 0;
+
+    int leftDiameter = diameter(node.left);
+    int rightDiameter = diameter(node.right);
+    int overallDiameter = Math.max(leftDiameter, rightDiameter);
+    int resultDiameter = Math.max(heightOrMaxDepth(node), overallDiameter);
+
+    return resultDiameter;
+  }
+
+  public static int t = 0;
+  
+  public static int tilt(Node node)
+  {
+    if(node == null)
+      return 0;
+    
+    int leftTilt = tilt(node.left);
+    int rightTilt = tilt(node.right);
+    int totalTilt = leftTilt + rightTilt + node.data;
+
+    // ! Tilt in Binary Tree = Absolute Difference between leftSum - rightSum.
+    t += Math.abs(leftTilt - rightTilt);
+    
+    return totalTilt;
+  }
+
   public static boolean find(Node node, int item)
   {
     if(node == null)
@@ -150,6 +183,8 @@ public class Max_Sum_Size_HeightOfBinaryTree
     System.out.println("Size of Binary Tree: " + size(root));
     System.out.println("Sum of Binary Tree: " + sum(root));
     System.out.println("Height/Maximum Depth of Binary Tree: " + heightOrMaxDepth(root));
+    System.out.println("Diameter of a Binary Tree: " + diameter(root));
+    System.out.println("Tilt of a Binary Tree: " + tilt(root));
     System.out.print("Enter the Value to be found: ");
     int item = scn.nextInt();
     System.out.println("Value/Item is Present in Binary Tree or not: " + find(root, item));
