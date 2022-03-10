@@ -1,8 +1,6 @@
-// ^ Lowest Common Ancestor of any two node means Common Parent of those two nodes.
-
 import java.util.*;
 
-public class LowestCommonAncestor_LCAInBST
+public class PrintInRangeOfBST
 {
   public static Scanner scn = new Scanner(System.in);
 
@@ -71,28 +69,40 @@ public class LowestCommonAncestor_LCAInBST
     return root;
   } 
   
-  public static int LowestCommonAncestor(Node node, int leftNodeValue, int rightNodeValue)
+  public static void printInRange(Node node, int leftNodeValue, int rightNodeValue)
   {
     if(node == null)
-      return 0;
+      return;
 
+    // ! If the Given range is smaller than Current node's value -> 
     if(leftNodeValue < node.data && rightNodeValue < node.data)
-      return LowestCommonAncestor(node.left, leftNodeValue, rightNodeValue);
+      printInRange(node.left, leftNodeValue, rightNodeValue);
+    
+    // ! Vice versa to above ->
     else if(leftNodeValue > node.data && rightNodeValue > node.data)
-      return LowestCommonAncestor(node.right, leftNodeValue, rightNodeValue);
+      printInRange(node.right, leftNodeValue, rightNodeValue);
+    
+    // ! If Current Node's value is in the Given Range -> 
     else
-      return node.data;
+    {
+      // * We use InOrder Traversal ->>
+      printInRange(node.left, leftNodeValue, rightNodeValue);
+      System.out.print(node.data + " ");
+      printInRange(node.right, leftNodeValue, rightNodeValue);
+    }      
   }
 
   public static void main(String[] args)
   {
     System.out.println();
     Node root = BST();
-
+    
     System.out.print("Value of the left Node to it's LCA: ");
     int leftValue = scn.nextInt();
     System.out.print("Value of the right Node to it's LCA: ");
     int rightValue = scn.nextInt();
-    System.out.println("Lowest Common Ancestor of any Two Nodes: " + LowestCommonAncestor(root, leftValue, rightValue)); 
+    System.out.print("Print All Nodes which are In a Given Range: ");
+    printInRange(root, leftValue, rightValue);
+    System.out.println();
   }
 }
