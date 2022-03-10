@@ -3,7 +3,7 @@
 
 import java.util.*;
 
-public class MathFunction_LikeHeightInBinaryTree
+public class CommonFunction_LikeHeightInBinaryTree
 {
   public static Scanner scn = new Scanner(System.in);
 

@@ -1,6 +1,6 @@
 // ^ Binary Search Tree Default Working :-
 
-
+// ? We define a Mid Value and all smaller values are transfered to the left side of the tree and higher to right side.
 
 // ! "-1" refers to Null Value in either Left or Right Side of the Binary Tree. 
 
@@ -49,15 +49,37 @@ public class IntroductionToBinarySearchTree
     }
   }
 
-  
+  public static Node createSearchTree(int[] arr, int startIndex, int endIndex)
+  {
+    if(startIndex > endIndex)
+      return null;
+
+    int mid = (startIndex + endIndex) >> 1;
+    Node node = new Node(arr[mid]);
+   
+    node.left = createSearchTree(arr, startIndex, mid - 1);
+    node.right = createSearchTree(arr, mid + 1, endIndex);
+
+    return node;
+  }
+
+  public static Node BST()
+  {
+    int[] arr = new int[10];
+
+    for(int i = 0; i < 10; i++)
+      arr[i] = (i + 1) * 10;
+
+    Node root = createSearchTree(arr,0,arr.length - 1);
+
+    return root;  
+  }
 
   public static void main(String[] args)
   {
     System.out.println();
     
-    int[] arr = {10,20,30,40,-1,-1,50,-1,-1,60,-1,70,-1,-1,80,90,100,120,-1,-1,130,-1,-1,110,-1,-1,140,-1,-1};
-    
-    // Node root = createTree(arr);
+    Node root = BST();
     System.out.println("Binary Search Tree in PreOrder: ");
     System.out.print(root);
     
