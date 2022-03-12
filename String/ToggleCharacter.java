@@ -1,3 +1,6 @@
+// ^ Toggle Character means Converting Lower Case Character into Upper Case and Vice Versa.
+// * Example - Input = {aabTy} & Output = {AABtY}.
+
 import java.util.*;
 
 public class ToggleCharacter
@@ -8,7 +11,9 @@ public class ToggleCharacter
   {
     String sb = "";
     char ch;
-    for (int i = 0; i < str.length(); i++) {
+    
+    for(int i = 0; i < str.length(); i++) 
+    {
       ch = str.charAt(i);
       if (Character.isUpperCase(ch))
         sb += Character.toLowerCase(ch);

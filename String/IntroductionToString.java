@@ -1,7 +1,7 @@
-// TODO:: String Defined Functions and Conversion ---->> 
+// Todo:: String Defined Functions and Conversion ---->> 
 
 // ? String is Immutable in Java means we cannot directly change any value in Java.
-// & Input a String till Space => String str. scn.next();
+// & Input a String till Space => String str.scn.next();
 // ~ Input a String for Complete Line => String str = scn.nextLine();
 // ^ String str = new String("any value");
 // * Character Array to String -> String str = new String(arr);  where char arr[].
@@ -18,8 +18,8 @@
 // ?                                            Where, it takes the starting index value but not ending index value.
 // * Syntax :--> string_defined_variable.substring(0, 3); 
 // ? .length() :- This Function will be used as loop iterator.
-// & To covert anything in String, we use .toString() or .valueOf().
 
+// & To Convert anything in String, we use Integer/Anything_Data_Type.toString() or .valueOf().
 // ^ Converting String Number into Integer Number using Integer.parseInt(str);
 
 // ~ Important point:- In String, .charAt() is the method to perform Character Array usage of this str[].
@@ -42,10 +42,12 @@
 
 import java.util.*;
 
-public class IntroductionToString {
+public class IntroductionToString 
+{
   public static Scanner scn = new Scanner(System.in);
 
-  public static void display(String str) {
+  public static void display(String str) 
+  {
     System.out.print(str.substring(0, str.length()));
 
     // ! To print a Character and Append those in String:
@@ -55,7 +57,8 @@ public class IntroductionToString {
     // str += ch;
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) 
+  {
     // String str = "";
     System.out.println();
     System.out.print("Enter the string: ");
