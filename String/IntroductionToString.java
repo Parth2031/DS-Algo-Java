@@ -4,7 +4,7 @@
 // & Input a String till Space => String str.scn.next();
 // ~ Input a String for Complete Line => String str = scn.nextLine();
 // ^ String str = new String("any value");
-// * Character Array to String -> String str = new String(arr);  where char arr[].
+// * Character Array to String -> String str = new String(arr);  where, char arr[].
 
 // ! Difference between .equals and "==" :
 // ? In .equals, we use it in Comparison, as it check address as well as character by character whereas, "==" only check address.
@@ -19,10 +19,13 @@
 // * Syntax :--> string_defined_variable.substring(0, 3); 
 // ? .length() :- This Function will be used as loop iterator.
 
-// & To Convert anything in String, we use Integer/Anything_Data_Type.toString() or .valueOf().
+// & To Convert anything in String, we use Integer/Anything_Data_Type.toString() or String.valueOf().
 // ^ Converting String Number into Integer Number using Integer.parseInt(str);
 
 // ~ Important point:- In String, .charAt() is the method to perform Character Array usage of this str[].
+
+// Todo:: Very Important ->> To Convert a Character Number into Integer Number, Like "0" to 0.
+// *                Syntax - int val = ch - '0'; OR int num = str.charAt(i) - '0';
 
 // ! StringBuilder is used as "It is Mutable" :
 

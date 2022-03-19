@@ -15,7 +15,7 @@ public class ToggleCharacter
     for(int i = 0; i < str.length(); i++) 
     {
       ch = str.charAt(i);
-      if (Character.isUpperCase(ch))
+      if(Character.isUpperCase(ch))
         sb += Character.toLowerCase(ch);
       else
         sb += Character.toUpperCase(ch);
@@ -27,7 +27,7 @@ public class ToggleCharacter
   public static String toggleChar(String str)
   {
     StringBuilder sb = new StringBuilder(str);
-    for (int i = 0; i < sb.length(); i++)
+    for(int i = 0; i < sb.length(); i++)
     {
       char ch = sb.charAt(i);
       if(ch >='A' && ch <='Z')
