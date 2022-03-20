@@ -11,3 +11,4 @@
 // ? .peek() - It returns the top elemnt of the stack.
 // ? .empty() - It is used to check Underflow/Overflow Condition.
 // ? .size()
+// ? .display() - It displays all the Elements in the Stack.

@@ -27,6 +27,12 @@
 // Todo:: Very Important ->> To Convert a Character Number into Integer Number, Like "0" to 0.
 // *                Syntax - int val = ch - '0'; OR int num = str.charAt(i) - '0';
 
+// ! To Sort a String using Character Array :
+
+// char arr[] = str.toCharArray();
+// Arrays.sort(arr);
+// String sortedString = new String(arr);
+
 // ! StringBuilder is used as "It is Mutable" :
 
 // * StringBuilder sb = new StringBuilder(int size/String str);
