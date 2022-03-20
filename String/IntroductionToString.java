@@ -6,6 +6,11 @@
 // ^ String str = new String("any value");
 // * Character Array to String -> String str = new String(arr);  where, char arr[].
 
+// ! To Check a String is Empty or Not: str.isEmpty() OR str == null.
+
+// Todo:: To Remove All Special Characters from String --> str.replaceAll("[^a-zA-Z0-9]", "")
+// & To Remove Space from String --> str.split("\\s"); and then Add to Another String using For Loop.
+
 // ! Difference between .equals and "==" :
 // ? In .equals, we use it in Comparison, as it check address as well as character by character whereas, "==" only check address.
 // * s1.equals(s2);
@@ -43,11 +48,15 @@
 // * sb.deleteCharAt(character);
 // ~ To convert StringBuilder in String, sb.toString();  
 
+// ^ To Convert a Whole String in Lower Case --> str = str.toLowerCase();
+
 // ! To Check or Convert in UpperCase or LowerCase :
 // Character.isUpperCase(ch);
 // Character.toUpperCase(ch);
 // Character.isLowerCase(ch);
 // Character.toLowerCase(ch);
+// Character.isDigit(ch);
+// Character.isAlphabetic(ch);
 
 import java.util.*;
 
