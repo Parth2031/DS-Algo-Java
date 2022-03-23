@@ -23,7 +23,7 @@ public class Vowel_ConsonantSubstrings
 
     for(int i = 0; i < str.length(); i++) 
     {
-      if (isVowel(str.charAt(i)))
+      if(isVowel(str.charAt(i)))
         vowels++;
       else
         consonants++;

@@ -28,7 +28,7 @@ public class TotalOccuranceOfANumber
     int count = 0;
     int i = key;
 
-    while (i <= n) 
+    while(i <= n) 
     {
       if(i % 10 == key)
         count++;
