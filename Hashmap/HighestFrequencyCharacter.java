@@ -10,10 +10,10 @@ public class HighestFrequencyCharacter
   public static Character MaximumOccuringCharacter(String str)
   {    
     HashMap<Character, Integer> hm = new HashMap<>();
-    for (int i = 0; i < str.length(); i++)
+    for(int i = 0; i < str.length(); i++)
     {
       char ch = str.charAt(i);
-      if (hm.containsKey(ch)) 
+      if(hm.containsKey(ch)) 
       {
         int old = hm.get(ch);
         int freq = old + 1;

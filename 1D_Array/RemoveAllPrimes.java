@@ -7,17 +7,20 @@ public class RemoveAllPrimes
   public static boolean isPrime(int n)
   {
     int count = 0;
-    boolean flag = true;
+    
     if(n == 0 || n == 1)
-      flag = false;
+      return false;
+    
     for(int s = 2; s <= n; s++)
     {
-      if ((n % s) == 0)
+      if((n % s) == 0)
         count++;
     }
-    if(count > 1)
-      flag = false;
-    return flag;  
+    
+    if(count < 2)
+      return true;
+
+    return false;  
   }
 
   public static ArrayList<Integer> RemovePrimes(ArrayList<Integer> arr)
@@ -26,7 +29,7 @@ public class RemoveAllPrimes
     for(int i = 0; i < arr.size(); i++)
     {
       boolean check = isPrime(arr.get(i));
-      if (check != true)
+      if(check != true)
         res.add(arr.get(i));
     }
     return res;
