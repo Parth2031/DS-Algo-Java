@@ -14,6 +14,9 @@
 
 // Todo:: Tabulation Array - int[] dp = new int[n + 1].
 // But here, we use loops to check Previous Calls.
+// * Direction in Tabulation means Where we have to solve the least problem, Eg -> Path from [6 to 6] or [0 to 6]. 
+//   So, we go Right to Left. 
+// ~ [0 to 6] means dp[0] and [6 to 6] means dp[n].
 
 import java.util.*;
 

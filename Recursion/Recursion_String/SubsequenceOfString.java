@@ -1,5 +1,5 @@
-// ^ Subsequence of String means [abc] as [, c, b, bc, a, ac, ab, abc].
-// * Subsequence of String = 2^n where, n => String Length.
+// ^ Subsequence/Subset of String means [abc] as [, c, b, bc, a, ac, ab, abc].
+// * Subsequence/Subset of String = 2^n where, n => String Length.
 
 import java.util.*;
 
